@@ -10,5 +10,9 @@ This bot is in here if you want to try it:
 - SQLite database (will soon be transffered to MySQL)
 - yeah i think that's enough
 
+# Contribution
+Just send a pull request to improve my code or contact me in **Discord**.
+Account: **notanerd1**
+
 # Hosting Service
 **nexcord.com** if you want free hosting
