@@ -852,6 +852,13 @@ async def eightball(ctx, question: str):
     embed.add_field(name="Answer", value=f"{response8ball} :8ball:")
     await ctx.respond(embed=embed)
 
+@nerdbot.slash_command(name="info", description="info on bot")
+async def info(ctx):
+    embed = discord.Embed(title="Info", description="Made by **notanerd1**, as a fun project but somehow become an actual bot.", colour=discord.Colour.brand_green())
+    embed.add_field(name="Github", value="Go **[here](https://github.com/notanerd314/nerdbucks/)** if you want to contribute to the code.")
+    embed.add_field(name="Credits", value="**OpenTDB** for the trivia database.\n**py-cord** for discord API wrapper.\n**ChatGPT** for the code I stole from it.")
+    await ctx.respond(embed=embed)
+
 # devcommands            
 devs = [1233989963046195282]
     
@@ -859,7 +866,7 @@ devs = [1233989963046195282]
 async def addbal(ctx, user: int, amount: int):
     """Add money to user"""
     if not ctx.author.id in devs:
-        await ctx.send(f'You are not a developer bruh :skull:')
+        await ctx.send('Free money? No. :sob:')
         return
     
     user_vanilla_add(user, amount)
@@ -869,7 +876,7 @@ async def addbal(ctx, user: int, amount: int):
 async def removebal(ctx, user: int, amount: int):
     """Remove money from user"""
     if not ctx.author.id in devs:
-        await ctx.send(f'You are not a developer bruh :skull:')
+        await ctx.send('no :rofl:')
         return
     
     user_subtract(user, amount)
@@ -879,7 +886,7 @@ async def removebal(ctx, user: int, amount: int):
 async def _exec(ctx, *, body: str):
     """Execute Python code"""
     if not ctx.author.id in devs:
-        await ctx.send(f'You are not a developer bruh :skull:')
+        await ctx.send('this is not a python interpreter')
         return
     
     env = {
@@ -927,7 +934,7 @@ async def _exec(ctx, *, body: str):
 async def update(ctx):
     """Update commands funny ahhhhhh"""
     if not ctx.author.id in devs:
-        await ctx.send('You are not a developer bruh 💀')
+        await ctx.send("Bro thinking he's so smart when running this command :skull:")
         return
     
     try:
@@ -943,7 +950,7 @@ async def update(ctx):
 async def shutdown(ctx):
     """restart bot, bot dies oh no"""
     if not ctx.author.id in devs:
-        await ctx.send(f'You are not a developer bruh :skull:')
+        await ctx.send(f"Bro thinking he's so smart when running this command :skull:")
         return
     
     log.success("Restarting bot...")
@@ -954,7 +961,7 @@ async def shutdown(ctx):
 async def force_shutdown(ctx):
     """NO PLEASE NO"""
     if not ctx.author.id in devs:
-        await ctx.send(f'You are not a developer bruh :skull:')
+        await ctx.send(f"Bro thinking he's so smart when running this command :skull:")
         return
     
     await ctx.send("Forcing shutdown using `exit()`...")
